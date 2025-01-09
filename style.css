@@ -12,6 +12,8 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: "Inter", serif;
+    outline: none;
+    color: var(--main-color);
 }
 
 body {
@@ -48,11 +50,99 @@ h1 {
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 34.8rem;
+    margin: 0 auto;
 }
 
 .convert-currency {
     display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.convert-currency label, .value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.convert-currency label p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 2rem 0 0.5rem;
+}
+
+.arrow {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+select {
+    height: 3.5rem;
+    width: 15rem;
+    border-radius: 1rem;
+    border: 2px solid #03738C;
+    background: rgba(173, 119, 119, 0);
+    font-weight: 600;
+    padding-left: 1rem;
+    appearance: none;
+    cursor: pointer;
+}
+
+.value p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 0.5rem;
+}
+
+input {
+    height: 3.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: 2px solid #03738C;
+    background: rgba(173, 119, 119, 0);
+    font-weight: 600;
+    text-align: center;
+}
+
+input::placeholder {
+    opacity: 0.5;
+}
+
+button {
+    margin: 2rem 0;
+    border-radius: 1rem;
+    background: #D99C79;
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 100%;
+    height: 3.8rem;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    border-radius: 1rem;
+    border: 2px solid #D99C79;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.currency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
