@@ -1,0 +1,58 @@
+
+
+:root {
+    --main-color: #03738C;
+    --light-color: #D99C79;
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Inter", serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, rgba(17, 174, 191, 0.90) 0%, rgba(3, 115, 140, 0.90) 100%), url(assets/traxer-Uzx6amdNZDk-unsplash.jpg) lightgray 50% / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 50rem;
+    border-radius: 4rem;
+    background: rgba(217, 217, 217, 0.80);
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.09));
+    overflow: hidden;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 7.5rem;
+    background: #D99C79;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.convert-currency {
+    display: flex;
+}
