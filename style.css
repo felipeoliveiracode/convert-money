@@ -17,7 +17,9 @@
 body {
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(180deg, rgba(17, 174, 191, 0.90) 0%, rgba(3, 115, 140, 0.90) 100%), url(assets/traxer-Uzx6amdNZDk-unsplash.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(180deg, rgba(85, 30, 158, 0.9)
+    0%, rgba(52, 17, 97, 0.9)
+    100%), url(assets/traxer-Uzx6amdNZDk-unsplash.jpg) lightgray 50% / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,9 +28,10 @@ body {
 .container {
     width: 50rem;
     border-radius: 4rem;
-    background: rgba(217, 217, 217, 0.80);
+    background: rgba(255, 255, 255, 0.8);
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.09));
     overflow: hidden;
+    scale: 0.9;
 }
 
 h1 {
@@ -44,7 +47,7 @@ h1 {
     align-items: center;
     width: 100%;
     height: 7.5rem;
-    background: #D99C79;
+    background: #FF980E;
 }
 
 .content {
@@ -66,9 +69,8 @@ h1 {
     justify-content: center;
 }
 
-.convert-currency label p {
+.convert-currency label p, .value p {
     font-size: 1.5rem;
-    font-weight: 400;
     text-align: center;
     margin: 2rem 0 0.5rem;
 }
@@ -92,7 +94,6 @@ select {
 .value {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 2rem 0 0.5rem;
 }
 
 input {
@@ -114,7 +115,7 @@ input::placeholder {
 button {
     margin: 2rem 0;
     border-radius: 1rem;
-    background: #D99C79;
+    background: #FF980E;
     border: none;
     color: #ffffff;
     font-size: 2rem;

@@ -12,7 +12,7 @@ function convertCurrency() {
     }).format(inputValueToConvert);
 
     switch (selectConvert.value) {
-        case "dolar":
+        case "USD":
             const dolarToday = 6;
 
             convertedCurrency.innerHTML = new Intl.NumberFormat('en-US', {
@@ -21,7 +21,7 @@ function convertCurrency() {
             }).format(inputValueToConvert / dolarToday);
             break;
 
-        case "euro":
+        case "EUR":
             const euroToday = 6.25;
 
             convertedCurrency.innerHTML = new Intl.NumberFormat('de-DE', {
@@ -30,7 +30,7 @@ function convertCurrency() {
             }).format(inputValueToConvert / euroToday);
             break;
 
-        case "libra":
+        case "GBP":
             const libraToday = 7.45;
 
             convertedCurrency.innerHTML = new Intl.NumberFormat('en-GB', {
@@ -39,7 +39,7 @@ function convertCurrency() {
             }).format(inputValueToConvert / libraToday);
             break;
 
-        case "btc":
+        case "BTC":
             const btcToday = 576399;
 
             convertedCurrency.innerHTML = (inputValueToConvert / btcToday).toFixed(2);
@@ -47,45 +47,28 @@ function convertCurrency() {
 
     }
 
-// function changeImage() {
-//     const currencyImage = document.querySelector(".img-currency");
-//     const nameConvertedCurrency = document.querySelector(".currency-name-converted");
-
-//     if (selectConvert.value == "dolar") {
-//         currencyImage.src = "./assets/dolar.png"
-//         nameConvertedCurrency.innerHTML = "Dólar"
-//     };
-
-//     if (selectConvert.value == "euro") {
-//         currencyImage.src = "./assets/euro.png"
-//         nameConvertedCurrency.innerHTML = "Euro"
-//     };
-
-//     convertCurrency();
-// }
-
 function changeImage() {
     const currencyImage = document.querySelector(".img-currency");
     const nameConvertedCurrency = document.querySelector(".currency-name-converted");
 
     switch (selectConvert.value) {
 
-        case "dolar":
+        case "USD":
             currencyImage.src = "./assets/dolar.png";
             nameConvertedCurrency.innerHTML = "Dólar";
             break;
 
-        case "euro":
+        case "EUR":
             currencyImage.src = "./assets/euro.png";
             nameConvertedCurrency.innerHTML = "Euro";
             break;
 
-        case "libra":
+        case "GBP":
             currencyImage.src = "./assets/libra.png";
             nameConvertedCurrency.innerHTML = "Libra";
             break
 
-        case "btc":
+        case "BTC":
             currencyImage.src = "./assets/btc.png";
             nameConvertedCurrency.innerHTML = "Bitcoin";
             break
