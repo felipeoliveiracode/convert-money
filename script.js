@@ -2,50 +2,69 @@ const btnConvert = document.getElementById("btn-convert");
 const selectConvert = document.querySelector(".convert-select");
 
 function convertCurrency() {
-    const inputValueToConvert = document.querySelector(".value-to-convert").value;
-    const currencyToConvert = document.getElementById("currency-to-convert");
-    const convertedCurrency = document.getElementById("converted-currency");
+    // URL da API para cotação do dólar
+const url = `https://economia.awesomeapi.com.br/json/last/${selectConvert.value}-BRL`;
 
-    currencyToConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-    }).format(inputValueToConvert);
+// Fazendo a requisição para a API
+fetch(url)
+    .then(response => response.json()) // Converte a resposta para JSON
+    .then(data => {
 
-    switch (selectConvert.value) {
-        case "USD":
-            const dolarToday = 6;
+        const currencyKey = `${selectConvert.value}BRL`;
 
-            convertedCurrency.innerHTML = new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD'
-            }).format(inputValueToConvert / dolarToday);
-            break;
+        // Acessa os dados da cotação do dólar
+        const currency = data[currencyKey];
+        const currencyToday = `${currency.bid}`;
 
-        case "EUR":
-            const euroToday = 6.25;
 
-            convertedCurrency.innerHTML = new Intl.NumberFormat('de-DE', {
-                style: 'currency',
-                currency: 'EUR'
-            }).format(inputValueToConvert / euroToday);
-            break;
+        const inputValueToConvert = document.querySelector(".value-to-convert").value;
+        const currencyToConvert = document.getElementById("currency-to-convert");
+        const convertedCurrency = document.getElementById("converted-currency");
+    
+        currencyToConvert.innerHTML = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }).format(inputValueToConvert);
 
-        case "GBP":
-            const libraToday = 7.45;
-
-            convertedCurrency.innerHTML = new Intl.NumberFormat('en-GB', {
-                style: 'currency',
-                currency: 'GBP'
-            }).format(inputValueToConvert / libraToday);
-            break;
-
-        case "BTC":
-            const btcToday = 576399;
-
-            convertedCurrency.innerHTML = (inputValueToConvert / btcToday).toFixed(2);
-        }
+        switch (selectConvert.value) {
+            case "USD":
+    
+                convertedCurrency.innerHTML = new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }).format(inputValueToConvert / currencyToday);
+                break;
+    
+            case "EUR":
+    
+                convertedCurrency.innerHTML = new Intl.NumberFormat('de-DE', {
+                    style: 'currency',
+                    currency: 'EUR'
+                }).format(inputValueToConvert / currencyToday);
+                break;
+    
+            case "GBP":
+    
+                convertedCurrency.innerHTML = new Intl.NumberFormat('en-GB', {
+                    style: 'currency',
+                    currency: 'GBP'
+                }).format(inputValueToConvert / currencyToday);
+                break;
+    
+            case "BTC":
+    
+                convertedCurrency.innerHTML = (inputValueToConvert / currencyToday).toFixed(2);
+                break;
+            }
+    
+    })
+    .catch(error => {
+        // Mostra erros, caso aconteçam
+        console.error('Erro ao acessar a API:', error);
+    });
 
     }
+
 
 function changeImage() {
     const currencyImage = document.querySelector(".img-currency");

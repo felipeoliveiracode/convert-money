@@ -1,6 +1,6 @@
 :root {
-    --main-color: #03738C;
-    --light-color: #D99C79;
+    --main-color: #4E5A7E;
+    --light-color: #D2D8E6;
     font-size: 10px;
 }
 
@@ -17,25 +17,29 @@
 body {
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(180deg, rgba(85, 30, 158, 0.9)
-    0%, rgba(52, 17, 97, 0.9)
-    100%), url(assets/traxer-Uzx6amdNZDk-unsplash.jpg) lightgray 50% / cover no-repeat;
+    background: linear-gradient(160deg, #2E21BB, #304EDD);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .container {
-    width: 50rem;
-    border-radius: 4rem;
-    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    width: 45rem;
+    border-radius: 3rem;
+    background: #FBFBFE;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.09));
     overflow: hidden;
     scale: 0.9;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
 }
 
 h1 {
-    color: #ffffff;
+    color: #1C273C;
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
@@ -47,7 +51,6 @@ h1 {
     align-items: center;
     width: 100%;
     height: 7.5rem;
-    background: #FF980E;
 }
 
 .content {
@@ -69,10 +72,12 @@ h1 {
     justify-content: center;
 }
 
-.convert-currency label p, .value p {
-    font-size: 1.5rem;
+.convert-currency label p,
+.value p {
+    font-size: 18px;
     text-align: center;
     margin: 2rem 0 0.5rem;
+    font-weight: 600;
 }
 
 .arrow {
@@ -82,28 +87,25 @@ h1 {
 }
 
 select {
-    height: 3.5rem;
+    height: 4.5rem;
     width: 15rem;
     border-radius: 1rem;
-    border: 2px solid #03738C;
+    border: 2px solid #D2D8E6;
     font-weight: 600;
-    padding-left: 1rem;
     cursor: pointer;
-}
-
-.value {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #233146;
 }
 
 input {
-    padding-left: 1.5rem;
-    height: 3.5rem;
+    height: 4.5rem;
     width: 100%;
     border-radius: 1rem;
-    border: 2px solid #03738C;
+    border: 2px solid #D2D8E6;
     font-weight: 600;
     text-align: center;
+    font-size: 18px;
 }
 
 input::placeholder {
@@ -112,26 +114,38 @@ input::placeholder {
     font-weight: 700;
 }
 
+/* Chrome, Safari, Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 button {
     margin: 2rem 0;
     border-radius: 1rem;
-    background: #FF980E;
+    background: linear-gradient(90deg, #FFA41C, #FFCB19);
     border: none;
     color: #ffffff;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 600;
     width: 100%;
-    height: 3.8rem;
+    height: 4.5rem;
     cursor: pointer;
 }
 
 button:hover {
-    opacity: 0.8;
+    background: #f79400;
 }
 
 .footer {
-    border-radius: 1rem;
-    border: 2px solid #D99C79;
+    border-radius: 3rem;
+    border: 2px solid #D2D8E6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,12 +165,26 @@ button:hover {
     width: 32px;
 }
 
-.currency-name, .currency-name-converted {
-    font-size: 1.3rem;
+.currency-name,
+.currency-name-converted {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
     font-weight: 700;
+    color: #4C5A7F;
 }
 
 .currency-value {
     font-size: 2rem;
     font-weight: 700;
+    color: #253348;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.developer {
+    margin-bottom: 1rem;
 }
