@@ -15,7 +15,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background: linear-gradient(160deg, #2E21BB, #304EDD);
     display: flex;
